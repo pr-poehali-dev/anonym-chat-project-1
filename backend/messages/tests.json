@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "Get messages from channel",
+      "method": "GET",
+      "path": "/?channel_id=1&limit=10",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "messages": "array",
+        "channel_id": "number"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Send new message",
+      "method": "POST",
+      "path": "/",
+      "headers": {
+        "Content-Type": "application/json"
+      },
+      "body": {
+        "message": "Тестовое сообщение",
+        "channel_id": 1
+      },
+      "expectedStatus": 201,
+      "expectedBody": {
+        "success": true,
+        "message": "object",
+        "session_token": "string"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

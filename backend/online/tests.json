@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "Get online statistics",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "total_users": "number",
+        "online_users": "number",
+        "messages_today": "number"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Update user activity heartbeat",
+      "method": "POST",
+      "path": "/",
+      "headers": {
+        "x-session-token": "sess_12345"
+      },
+      "expectedStatus": 200,
+      "expectedBody": {
+        "success": true
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

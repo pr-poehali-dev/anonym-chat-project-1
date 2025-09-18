@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "Get servers list",
+      "method": "GET",
+      "path": "/?type=servers",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "servers": "array"
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Get channels list",
+      "method": "GET", 
+      "path": "/?type=channels",
+      "expectedStatus": 200,
+      "expectedBody": {
+        "channels": "array"
+      },
+      "bodyMatcher": "partial"
+    }
+  ]
+}
